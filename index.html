@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinixa 2026 | University College of Engineering, Ariyalur (Anna University, Chennai)</title>
+  
+  <!-- SEO Meta Tags & Favicon -->
+  <meta name="description" content="Official Infinixa 2026 National Level Symposium of University College of Engineering, Ariyalur (A Constituent College of Anna University, Chennai). High-tech paper presentation, coding battles, AI prompt challenges, esports, and events.">
+  <meta name="keywords" content="Infinixa 2026, Infinixa, INFINIXA, UCE Ariyalur, Anna University Chennai, Tech Fest, Coding Competition, Prompt Battle, Free Fire, Paper Presentation, Sketch Hunt">
+  <meta name="theme-color" content="#05070f">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Lucide Icons & Three.js CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Background 3D WebGL Canvas -->
+  <div id="webgl-canvas-container">
+    <canvas id="webgl-canvas"></canvas>
+  </div>
+
+  <!-- Cyber Scanline Overlay -->
+  <div class="cyber-scanlines"></div>
+
+  <!-- Main Application Wrapper -->
+  <div class="app-container">
+
+    <!-- ====================================================================
+         1. NAVIGATION BAR
+         ==================================================================== -->
+    <header class="cyber-nav" id="main-nav">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-brand">
+          <div class="brand-icon">
+            <img src="assets/logo.png" alt="Anna University Logo" class="nav-brand-logo">
+          </div>
+          <div class="brand-text">
+            <span class="brand-university" data-bind="universityName">ANNA UNIVERSITY, CHENNAI</span>
+            <span class="brand-title" data-bind="symposiumTitle">INFINIXA 2026</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">HOME</a></li>
+          <li><a href="#technical" class="nav-link">TECHNICAL</a></li>
+          <li><a href="#non-technical" class="nav-link">NON-TECHNICAL</a></li>
+          <li><a href="#rulebook" class="nav-link">RULEBOOK</a></li>
+          <li><a href="#agenda" class="nav-link">AGENDA</a></li>
+          <li><a href="#perks" class="nav-link">PERKS</a></li>
+          <li><a href="#details" class="nav-link">DETAILS</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#location" class="nav-link">LOCATION</a></li>
+        </ul>
+
+        <!-- Action / Audio Control & Quick Register -->
+        <div class="nav-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5ncHQMUFToFV1VNgVx5FKkOGaewIGDtQMgW8utG6obO-dGA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="nav-cta-btn" id="nav-register-btn" title="Register for Infinixa 2026">
+            <span class="nav-cta-icon">⚡</span>
+            <span>REGISTER</span>
+            <span class="nav-cta-price">₹150</span>
+          </a>
+
+          <button class="audio-toggle-btn" id="audio-toggle-btn" title="Toggle Sci-Fi SFX">
+            <div class="audio-waves">
+              <span class="audio-bar"></span>
+              <span class="audio-bar"></span>
+              <span class="audio-bar"></span>
+            </div>
+            <span class="audio-label">SFX: OFF</span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link">HOME</a></li>
+        <li><a href="#technical" class="mobile-nav-link">TECHNICAL</a></li>
+        <li><a href="#non-technical" class="mobile-nav-link">NON-TECHNICAL</a></li>
+        <li><a href="#rulebook" class="mobile-nav-link">RULEBOOK</a></li>
+        <li><a href="#agenda" class="mobile-nav-link">AGENDA</a></li>
+        <li><a href="#perks" class="mobile-nav-link">PERKS</a></li>
+        <li><a href="#details" class="mobile-nav-link">DETAILS</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        <li><a href="#location" class="mobile-nav-link">LOCATION</a></li>
+        <li><a href="#register" class="mobile-nav-link" style="color: var(--cyan);">⚡ REGISTER (₹150)</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+    <!-- ====================================================================
+         2. HERO SECTION
+         ==================================================================== -->
+    <section id="hero">
+      <div class="section-container hero-content">
+
+        <!-- Shimmer Announcement Banner -->
+        <a href="#rulebook" class="hero-announcement-pill">
+          <span class="pill-sparkle">✦</span>
+          <span class="pill-badge">SPARCS CSE</span>
+          <span class="pill-text">National Level Technical Symposium • Sep 25, 2026</span>
+          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+        </a>
+
+        <div class="hero-badge">
+          <img src="assets/logo.png" alt="Anna University Logo" class="hero-badge-emblem">
+          <span class="section-tag-pulse"></span>
+          <span class="hero-badge-text" data-bind="universityName">ANNA UNIVERSITY, CHENNAI</span>
+        </div>
+
+        <h2 class="hero-main-title" data-bind="collegeName">University College of Engineering, Ariyalur</h2>
+        <p class="hero-affiliation" data-bind="affiliation">(A Constituent College of Anna University, Chennai)</p>
+        <h1 class="hero-large-title">
+          <span class="hero-title-main glitch-text" data-text="INFINIXA">INFINIXA</span>
+          <span class="hero-title-year">2026</span>
+        </h1>
+        
+        <p class="hero-tagline" data-bind="tagline">“INNOVATE. COMPETE. CONQUER.”</p>
+        
+        <p class="hero-description" data-bind="description">
+          “Where research innovation, generative AI, competitive coding, tactical esports, and lateral thinking converge into one high-tech championship.”
+        </p>
+
+        <!-- High-Conversion Action Button Group -->
+        <div class="hero-cta-group">
+          <!-- Primary Register Button -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5ncHQMUFToFV1VNgVx5FKkOGaewIGDtQMgW8utG6obO-dGA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-primary-register" id="hero-register-btn">
+            <span class="btn-sparkle">⚡</span>
+            <span>REGISTER NOW • ₹150</span>
+            <i data-lucide="arrow-up-right" style="width: 18px; height: 18px;"></i>
+          </a>
+
+          <!-- Add to Calendar Button -->
+          <button class="btn-secondary-calendar" id="hero-calendar-btn" title="Save September 25, 2026 to Google Calendar">
+            <i data-lucide="calendar-plus" style="width: 17px; height: 17px;"></i>
+            <span>ADD TO CALENDAR</span>
+          </button>
+
+          <!-- Explore Rulebook Link -->
+          <a href="#rulebook" class="btn-secondary-explore">
+            <i data-lucide="book-open" style="width: 17px; height: 17px;"></i>
+            <span>RULEBOOK</span>
+          </a>
+        </div>
+
+        <!-- Enterprise Social Proof / Metric Ribbon -->
+        <div class="hero-social-proof">
+          <div class="proof-item">
+            <div class="proof-icon-box"><i data-lucide="trophy"></i></div>
+            <div class="proof-info">
+              <strong>5 Major Arenas</strong>
+              <span>Tech & Esports</span>
+            </div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-icon-box"><i data-lucide="utensils"></i></div>
+            <div class="proof-info">
+              <strong>₹150 All-Inclusive</strong>
+              <span>Hot Lunch, Kit & Tea</span>
+            </div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-icon-box"><i data-lucide="award"></i></div>
+            <div class="proof-info">
+              <strong>Anna University</strong>
+              <span>Official Certificates</span>
+            </div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-icon-box"><i data-lucide="users"></i></div>
+            <div class="proof-info">
+              <strong>500+ Hackers</strong>
+              <span>Statewide Delegation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. TECHNICAL EVENTS (TECHNICAL ARENA)
+         ==================================================================== -->
+    <section id="technical">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>CHALLENGE YOUR LIMITS</span>
+          </div>
+          <h2 class="section-title">TECHNICAL ARENA</h2>
+          <p class="section-subtitle">“Think. Build. Solve. Dominate.”</p>
+        </div>
+
+        <div class="arena-grid">
+          
+          <!-- Event 01: PaperX -->
+          <div class="event-card">
+            <div class="card-header">
+              <span class="card-number">01</span>
+              <span class="card-badge">RESEARCH & INNOVATION</span>
+            </div>
+
+            <h3 class="card-title">PAPERX</h3>
+            <h4 class="card-subtitle">Technical Paper Presentation</h4>
+
+            <!-- Interactive PaperX PPT Presentation Sim Canvas -->
+            <div class="card-visual-container">
+              <div class="paperx-sim">
+                <div class="paperx-status-header">
+                  <div class="paperx-format-badge">
+                    <i data-lucide="presentation" style="width: 14px; height: 14px; color: var(--cyan);"></i>
+                    <span>PPT & RESEARCH</span>
+                  </div>
+                  <span class="paperx-live-tag">LIVE STAGE</span>
+                </div>
+                <div class="paperx-deck-display">
+                  <span class="paperx-main-banner">📊 INNOVATIVE TECH PPT</span>
+                  <span class="paperx-deck-sub">CHOOSE ANY EMERGING TECH DOMAIN</span>
+                </div>
+                <div class="paperx-status-footer">
+                  <span class="paperx-qna-indicator">🎤 PRESENTATION & Q/A ACTIVE</span>
+                  <div class="paperx-progress-track">
+                    <div class="paperx-progress-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="card-description">
+              PAPERX is a technical paper presentation event where participants present their innovative ideas, research, and emerging technology concepts. Participants explain their topic to the judges and answer questions based on their presentation.
+            </p>
+
+            <div class="card-tags">
+              <span class="card-tag-pill">Innovation</span>
+              <span class="card-tag-pill">Technology</span>
+              <span class="card-tag-pill">Knowledge</span>
+              <span class="card-tag-pill">Presentation</span>
+            </div>
+          </div>
+
+          <!-- Event 02: Prompt Battle -->
+          <div class="event-card">
+            <div class="card-header">
+              <span class="card-number">02</span>
+              <span class="card-badge">GENERATIVE AI / LLM</span>
+            </div>
+
+            <h3 class="card-title">PROMPT BATTLE</h3>
+            <h4 class="card-subtitle">AI Creativity & Generative Challenge</h4>
+
+            <!-- Interactive Prompt Sim Canvas -->
+            <div class="card-visual-container">
+              <div class="prompt-sim">
+                <div class="prompt-ai-status">
+                  <i data-lucide="bot" style="width: 14px; height: 14px; color: var(--cyan);"></i>
+                  <span id="prompt-model-status">ENGINE: MULTIMODAL PROTOTYPER</span>
+                </div>
+                <div class="prompt-line">
+                  <span>&gt;</span>
+                  <span class="prompt-typing-text" id="prompt-typing-text">Design autonomous AI drone search algorithm...</span>
+                </div>
+                <div class="prompt-output-preview">
+                  <span>SYNTHESIS:</span>
+                  <span class="prompt-pill-out">3D MESH</span>
+                  <span class="prompt-pill-out">PROTOTYPE</span>
+                  <span class="prompt-pill-out">IMAGE</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="card-description">
+              PROMPT BATTLE is an AI creativity and innovation event where participants use effective prompts to create images, videos, real-world work models, and functional prototypes using AI tools. Participants are given a challenge and must design the right prompt to produce the best possible output within a limited time.
+            </p>
+
+            <div class="card-tags">
+              <span class="card-tag-pill">Prompt Engineering</span>
+              <span class="card-tag-pill">Creativity</span>
+              <span class="card-tag-pill">AI Tools</span>
+              <span class="card-tag-pill">Innovation</span>
+              <span class="card-tag-pill">Real-World Solutions</span>
+            </div>
+          </div>
+
+          <!-- Event 03: Code Combat -->
+          <div class="event-card">
+            <div class="card-header">
+              <span class="card-number">03</span>
+              <span class="card-badge">LEETCODE / HACKERRANK STYLE</span>
+            </div>
+
+            <h3 class="card-title">CODE COMBAT</h3>
+            <h4 class="card-subtitle">Competitive Coding & Problem Solving</h4>
+
+            <!-- Interactive Code Combat Sim Canvas -->
+            <div class="card-visual-container">
+              <div class="code-combat-sim">
+                <div class="code-header-bar">
+                  <span class="code-status-pill">● EVALUATING TESTCASES</span>
+                  <span class="code-timer-badge">STATUS: PASS</span>
+                </div>
+                <div class="code-stream-line">&gt; Test Case 1/4: [PASSED] Memory: 12.4 MB</div>
+                <div class="code-stream-line">&gt; Test Case 2/4: [PASSED] Memory: 14.1 MB</div>
+                <div class="code-stream-line">&gt; Test Case 3/4: [PASSED] Time: 0.018ms</div>
+                <div class="code-stream-line">&gt; Test Case 4/4: [ACCEPTED] Score: 100/100</div>
+              </div>
+            </div>
+
+            <p class="card-description">
+              CODE COMBAT is a coding problem-solving event inspired by platforms like LeetCode and HackerRank. Participants must solve programming problems within a given time limit. Participants earn points for correct solutions, with faster and more accurate solutions achieving higher scores.
+            </p>
+
+            <div class="card-tags">
+              <span class="card-tag-pill">Problem Solving</span>
+              <span class="card-tag-pill">Coding Skills</span>
+              <span class="card-tag-pill">Speed</span>
+              <span class="card-tag-pill">Accuracy</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. CINEMATIC 3D TRANSITION ZONE
+         ==================================================================== -->
+    <div class="cinematic-transition-zone">
+      <div class="portal-ring-outer">
+        <div class="portal-core"></div>
+        <svg class="portal-ring-svg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(0, 240, 255, 0.4)" stroke-width="2" stroke-dasharray="10 15"></circle>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(139, 92, 246, 0.5)" stroke-width="3" stroke-dasharray="25 10"></circle>
+          <circle cx="100" cy="100" r="55" fill="none" stroke="rgba(255, 0, 122, 0.4)" stroke-width="1.5" stroke-dasharray="5 8"></circle>
+        </svg>
+      </div>
+      <p class="transition-text">TRANSITIONING TO ENTERTAINMENT & ESPORTS</p>
+    </div>
+
+    <!-- ====================================================================
+         5. NON-TECHNICAL EVENTS (ENTERTAINMENT ARENA)
+         ==================================================================== -->
+    <section id="non-technical">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag purple">
+            <span class="section-tag-pulse"></span>
+            <span>UNLEASH PURE ENERGY</span>
+          </div>
+          <h2 class="section-title">ENTERTAINMENT ARENA</h2>
+          <p class="section-subtitle">“Strategy. Adrenaline. Observation. Glory.”</p>
+        </div>
+
+        <div class="arena-grid two-cards-grid">
+          
+          <!-- Event 01: Free Fire -->
+          <div class="event-card warn-theme">
+            <div class="card-header">
+              <span class="card-number">01</span>
+              <span class="card-badge">ESPORTS BATTLE ROYALE</span>
+            </div>
+
+            <h3 class="card-title">FREE FIRE</h3>
+            <h4 class="card-subtitle">Ultimate Gaming Championship</h4>
+
+            <!-- Interactive Free Fire Esports Sim Canvas -->
+            <div class="card-visual-container">
+              <div class="freefire-sim">
+                <div class="freefire-hud-top">
+                  <span class="freefire-alive-badge"><i data-lucide="shield" style="width: 12px; height: 12px;"></i> SQUAD: 4/4 ALIVE</span>
+                  <span class="freefire-zone-timer"><i data-lucide="crosshair" style="width: 12px; height: 12px;"></i> COMBAT ZONE</span>
+                </div>
+                <div class="freefire-crosshair-wrap">
+                  <div class="freefire-crosshair"></div>
+                  <div class="freefire-target-ping"></div>
+                  <span class="freefire-booyah-meter">BOOYAH READINESS: 98%</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="card-description">
+              Drop into the battleground, strategize with your squad, and battle for the Booyah in the high-stakes Free Fire tournament. Reflexes, tactical coordination, map awareness, and shooting precision will crown the ultimate champions.
+            </p>
+
+            <div class="card-tags">
+              <span class="card-tag-pill">Strategy</span>
+              <span class="card-tag-pill">Reflexes</span>
+              <span class="card-tag-pill">Teamwork</span>
+              <span class="card-tag-pill">Gaming</span>
+              <span class="card-tag-pill">Tactical Combat</span>
+            </div>
+          </div>
+
+          <!-- Event 02: Sketch Hunt -->
+          <div class="event-card purple-theme">
+            <div class="card-header">
+              <span class="card-number">02</span>
+              <span class="card-badge">CREATIVE PICTIONARY</span>
+            </div>
+
+            <h3 class="card-title">SKETCH HUNT</h3>
+            <h4 class="card-subtitle">Draw • Guess • Conquer</h4>
+
+            <!-- Interactive Sketch Hunt Visual Sim Canvas -->
+            <div class="card-visual-container">
+              <div class="sketch-hunt-sim">
+                <div class="sketch-canvas-mock">
+                  <div class="sketch-pen-icon">
+                    <i data-lucide="pencil" style="width: 16px; height: 16px; color: var(--purple);"></i>
+                  </div>
+                  <div class="sketch-drawing-display">
+                    <span class="sketch-art-emoji" id="sketch-art-emoji">🎨</span>
+                    <span class="sketch-prompt-target" id="sketch-prompt-target">SECRET: SPACE ROCKET</span>
+                  </div>
+                </div>
+                <div class="sketch-status-bar">
+                  <span class="sketch-timer-tag" id="sketch-timer-tag">🎨 LIVE ROUND</span>
+                  <span class="sketch-guess-status" id="sketch-guess-status">TEAM GUESSING: [TRANSMITTING...]</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="card-description">
+              A fun and creative non-technical event where participants test their drawing skills, imagination, observation, and quick thinking. One participant receives a secret word or concept and must communicate it only through drawing, while their teammates try to guess the answer within a limited time without words, letters, numbers, or verbal clues.
+            </p>
+
+            <div class="card-tags">
+              <span class="card-tag-pill">Creativity</span>
+              <span class="card-tag-pill">Teamwork</span>
+              <span class="card-tag-pill">Observation</span>
+              <span class="card-tag-pill">Quick Thinking</span>
+              <span class="card-tag-pill">Fun</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. EVENTS MAIN RULEBOOK SECTION
+         ==================================================================== -->
+    <section id="rulebook" class="rulebook-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>OFFICIAL PROTOCOLS</span>
+          </div>
+          <h2 class="section-title">EVENTS MAIN RULEBOOK</h2>
+          <p class="section-subtitle">Department of Computer Science & Engineering (SPARCS) • Comprehensive Guidelines & Regulations</p>
+        </div>
+
+        <!-- Interactive Rulebook Filter Tabs -->
+        <div class="rulebook-tabs-container">
+          <div class="rulebook-tabs" role="tablist">
+            <button class="rulebook-tab-btn active" data-rule-filter="all">
+              <i data-lucide="layers" style="width: 16px; height: 16px;"></i>
+              <span>ALL PROTOCOLS</span>
+            </button>
+            <button class="rulebook-tab-btn" data-rule-filter="general">
+              <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+              <span>GENERAL RULES</span>
+            </button>
+            <button class="rulebook-tab-btn" data-rule-filter="paperx">
+              <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+              <span>PAPERX</span>
+            </button>
+            <button class="rulebook-tab-btn" data-rule-filter="prompt-battle">
+              <i data-lucide="bot" style="width: 16px; height: 16px;"></i>
+              <span>PROMPT BATTLE</span>
+            </button>
+            <button class="rulebook-tab-btn" data-rule-filter="code-combat">
+              <i data-lucide="terminal" style="width: 16px; height: 16px;"></i>
+              <span>CODE COMBAT</span>
+            </button>
+            <button class="rulebook-tab-btn" data-rule-filter="free-fire">
+              <i data-lucide="crosshair" style="width: 16px; height: 16px;"></i>
+              <span>FREE FIRE</span>
+            </button>
+            <button class="rulebook-tab-btn" data-rule-filter="sketch-hunt">
+              <i data-lucide="palette" style="width: 16px; height: 16px;"></i>
+              <span>SKETCH HUNT</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Rulebook Content Grid -->
+        <div class="rulebook-content-grid">
+
+          <!-- ==================== 1. GENERAL RULES ==================== -->
+          <div class="rulebook-card" data-rule-category="general">
+            <div class="rulebook-card-header">
+              <div class="rule-badge-group">
+                <span class="rule-cat-badge general-badge">SYMPOSIUM PROTOCOL</span>
+                <span class="rule-sub-badge">ALL PARTICIPANTS</span>
+              </div>
+              <h3 class="rulebook-card-title"><i data-lucide="shield-alert" class="rule-title-icon"></i> GENERAL RULES & AMENITIES</h3>
+            </div>
+            
+            <div class="general-rules-grid">
+              <div class="rule-pill-card">
+                <div class="rule-pill-icon"><i data-lucide="ticket"></i></div>
+                <div class="rule-pill-info">
+                  <span class="rule-pill-label">Registration Fee</span>
+                  <span class="rule-pill-value">₹150/- per participant</span>
+                </div>
+              </div>
+              <div class="rule-pill-card">
+                <div class="rule-pill-icon"><i data-lucide="id-card"></i></div>
+                <div class="rule-pill-info">
+                  <span class="rule-pill-label">Institution ID</span>
+                  <span class="rule-pill-value">Mandatory for all attendees</span>
+                </div>
+              </div>
+              <div class="rule-pill-card">
+                <div class="rule-pill-icon"><i data-lucide="coffee"></i></div>
+                <div class="rule-pill-info">
+                  <span class="rule-pill-label">Food & Kit Provided</span>
+                  <span class="rule-pill-value">Kit, Lunch, Tea & Snacks included</span>
+                </div>
+              </div>
+              <div class="rule-pill-card">
+                <div class="rule-pill-icon"><i data-lucide="gavel"></i></div>
+                <div class="rule-pill-info">
+                  <span class="rule-pill-label">Authority</span>
+                  <span class="rule-pill-value">Organizing committee decision is final</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== 2. PAPERX ==================== -->
+          <div class="rulebook-card" data-rule-category="paperx">
+            <div class="rulebook-card-header">
+              <div class="rule-badge-group">
+                <span class="rule-cat-badge tech-badge">TECHNICAL EVENT 01</span>
+                <span class="rule-sub-badge">MAX 4 PER TEAM</span>
+              </div>
+              <h3 class="rulebook-card-title"><i data-lucide="file-text" class="rule-title-icon"></i> 1. PAPERX : TECHNICAL PAPER PRESENTATION</h3>
+            </div>
+
+            <!-- Submission Deadline Callout -->
+            <div class="rulebook-deadline-banner">
+              <div class="deadline-details">
+                <div class="deadline-item">
+                  <span class="deadline-label"><i data-lucide="calendar"></i> LAST DATE FOR SUBMISSION:</span>
+                  <span class="deadline-val cyan-glow-text">22nd Sep 2026</span>
+                </div>
+                <div class="deadline-divider"></div>
+                <div class="deadline-item">
+                  <span class="deadline-label"><i data-lucide="check-circle-2"></i> PAPER CONFIRMATION DATE:</span>
+                  <span class="deadline-val purple-glow-text">23rd Sep 2026</span>
+                </div>
+              </div>
+              <a href="https://forms.gle/bf3WDv1xrNUvhzyo6" target="_blank" rel="noopener noreferrer" class="btn-rule-action" id="paperx-submit-btn">
+                <span>SUBMIT ABSTRACT, PAPER & PPT</span>
+                <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+
+            <!-- PaperX Format Specs -->
+            <div class="specs-pill-row">
+              <span class="spec-pill"><i data-lucide="users"></i> Team: Max 4 members</span>
+              <span class="spec-pill"><i data-lucide="file-lines"></i> Abstract: ≤ 250 words</span>
+              <span class="spec-pill"><i data-lucide="book-open"></i> Full Paper: ≤ 15 pages (IEEE format)</span>
+              <span class="spec-pill"><i data-lucide="clock"></i> Presentation: 10 Mins + Q&A</span>
+              <span class="spec-pill"><i data-lucide="alert-triangle"></i> Reporting: 30 Mins before slot</span>
+            </div>
+
+            <!-- Guidelines -->
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="list-checks"></i> Event Guidelines:</h4>
+              <ul class="rule-bullet-list">
+                <li>Participants must choose a topic from the given list of approved topics for their presentation.</li>
+                <li>The selected topic should focus on a specific problem, innovation, technology, research area, or practical solution.</li>
+                <li>The abstract should not exceed <strong>250 words</strong>, and the complete research paper should not exceed <strong>15 pages</strong>.</li>
+                <li>The paper must be prepared strictly according to the prescribed <strong>IEEE format</strong>.</li>
+                <li><strong>Plagiarism is strictly prohibited.</strong> All submitted work must be 100% original.</li>
+                <li>Kindly submit your abstract, paper, and PPT to the official submission Google Form before the deadline.</li>
+                <li>Participants must report to the venue <strong>30 minutes before</strong> their scheduled presentation time.</li>
+                <li>The decision of the judges will be final and binding.</li>
+              </ul>
+            </div>
+
+            <!-- Approved Topics -->
+            <div class="rulebook-subblock">
+              <div class="subblock-header-flex">
+                <h4 class="subblock-heading"><i data-lucide="sparkles"></i> 20 Approved Presentation Topics:</h4>
+                <span class="subblock-tag">CHOOSE ANY 1</span>
+              </div>
+              <div class="topics-grid-container">
+                <div class="topic-chip"><span class="topic-num">01</span> Artificial Intelligence and Machine Learning</div>
+                <div class="topic-chip"><span class="topic-num">02</span> Future of Robotics & Automation</div>
+                <div class="topic-chip"><span class="topic-num">03</span> Cybersecurity Challenges & Solutions</div>
+                <div class="topic-chip"><span class="topic-num">04</span> Cloud Computing & Edge Computing</div>
+                <div class="topic-chip"><span class="topic-num">05</span> Applications of IoT in Modern Life</div>
+                <div class="topic-chip"><span class="topic-num">06</span> Virtual Reality (VR) & Augmented Reality (AR)</div>
+                <div class="topic-chip"><span class="topic-num">07</span> Quantum Computing & Its Applications</div>
+                <div class="topic-chip"><span class="topic-num">08</span> Green & Sustainable Technologies</div>
+                <div class="topic-chip"><span class="topic-num">09</span> Blockchain Applications Beyond Cryptocurrency</div>
+                <div class="topic-chip"><span class="topic-num">10</span> Web 3.0 – The Future of the Internet</div>
+                <div class="topic-chip"><span class="topic-num">11</span> 5G & Next-Generation Wireless Networks</div>
+                <div class="topic-chip"><span class="topic-num">12</span> Big Data Analytics & Business Intelligence</div>
+                <div class="topic-chip"><span class="topic-num">13</span> Ethical Issues in Artificial Intelligence</div>
+                <div class="topic-chip"><span class="topic-num">14</span> Biotechnology & Healthcare Innovations</div>
+                <div class="topic-chip"><span class="topic-num">15</span> Space Technology & Satellite Communication</div>
+                <div class="topic-chip"><span class="topic-num">16</span> Digital Twins & Industry 4.0</div>
+                <div class="topic-chip"><span class="topic-num">17</span> Renewable Energy & Smart Grids</div>
+                <div class="topic-chip"><span class="topic-num">18</span> Autonomous Vehicles & Electric Mobility</div>
+                <div class="topic-chip"><span class="topic-num">19</span> Human–Computer Interaction & Brain–Machine Interface</div>
+                <div class="topic-chip"><span class="topic-num">20</span> Data Privacy & Digital Ethics</div>
+              </div>
+            </div>
+
+            <!-- Judging Criteria -->
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="award"></i> Judging Criteria:</h4>
+              <div class="criteria-pill-grid">
+                <div class="criteria-card"><i data-lucide="check"></i> <span>Content Depth</span></div>
+                <div class="criteria-card"><i data-lucide="check"></i> <span>Subject Analysis</span></div>
+                <div class="criteria-card"><i data-lucide="check"></i> <span>Innovative Ideas & Originality</span></div>
+                <div class="criteria-card"><i data-lucide="check"></i> <span>Audio/Video Effects & PPT Usage</span></div>
+                <div class="criteria-card"><i data-lucide="check"></i> <span>Articulation & Thoughts Conveyance</span></div>
+                <div class="criteria-card"><i data-lucide="check"></i> <span>Time Management & Conclusion</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== 3. PROMPT BATTLE ==================== -->
+          <div class="rulebook-card" data-rule-category="prompt-battle">
+            <div class="rulebook-card-header">
+              <div class="rule-badge-group">
+                <span class="rule-cat-badge tech-badge">TECHNICAL EVENT 02</span>
+                <span class="rule-sub-badge">MIN 2 PER TEAM • 70 MINS</span>
+              </div>
+              <h3 class="rulebook-card-title"><i data-lucide="bot" class="rule-title-icon"></i> 2. PROMPT BATTLE : GENERATIVE AI CHALLENGE</h3>
+            </div>
+
+            <p class="rulebook-intro-text">
+              Prompt Battle is a team-based technical event where participants use AI tools to generate 
+              <strong>Images, Videos, and Working Models/Software/Apps</strong> based on given problem statements. It tests 
+              creativity, prompt-crafting skill, and the ability to translate ideas into AI-generated output — all within a fixed time limit.
+            </p>
+
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="list-checks"></i> Rules & Regulations:</h4>
+              <ul class="rule-bullet-list">
+                <li>Each team can have a <strong>minimum of two members</strong>.</li>
+                <li>The event conductor will provide the list of approved AI tools for each category.</li>
+                <li>If a team wishes to use any other AI tool, it must be requested and approved by the event conductor before use.</li>
+                <li><strong>Internet usage is restricted to the approved AI tool only</strong> — no browsing other sites, forums, or search engines.</li>
+                <li>Problem statements and resources will be provided before the contest begins.</li>
+                <li>Participants must use only the specified AI tool(s) for their category to generate their output.</li>
+                <li><strong>Do not copy-paste or reuse output</strong> from any external source, previous projects, or other participants — the output must be generated live during the event.</li>
+                <li>Do not discuss, share, or copy others' prompts, output, or approach during the contest. Any attempt will lead to <strong>immediate disqualification</strong>.</li>
+                <li>In case of any conflict, the decision of the jury panel will be final.</li>
+              </ul>
+            </div>
+
+            <!-- Event Structure Table -->
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="clock"></i> Event Structure (70 Minutes Total):</h4>
+              <div class="table-responsive-wrapper">
+                <table class="cyber-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 25%;">Phase</th>
+                      <th style="width: 15%;">Time</th>
+                      <th style="width: 60%;">What Happens</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="phase-badge">1. Choose Questions</span></td>
+                      <td class="time-col">5 min</td>
+                      <td>Theme/problem statement revealed for team's category (Image / Video / App); team selects/confirms their question.</td>
+                    </tr>
+                    <tr>
+                      <td><span class="phase-badge">2. Create & Submit Approach</span></td>
+                      <td class="time-col">15 min</td>
+                      <td>Team plans their approach/prompt strategy and submits it for record before execution.</td>
+                    </tr>
+                    <tr>
+                      <td><span class="phase-badge">3. Execute AI Tools</span></td>
+                      <td class="time-col">35 min</td>
+                      <td>Team generates output using approved AI tools, refines as needed, and finalizes submission.</td>
+                    </tr>
+                    <tr>
+                      <td><span class="phase-badge">4. Analysis & Results</span></td>
+                      <td class="time-col">15 min</td>
+                      <td>Judges evaluate output against the problem requirements; results announced.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== 4. CODE COMBAT ==================== -->
+          <div class="rulebook-card" data-rule-category="code-combat">
+            <div class="rulebook-card-header">
+              <div class="rule-badge-group">
+                <span class="rule-cat-badge tech-badge">TECHNICAL EVENT 03</span>
+                <span class="rule-sub-badge">INDIVIDUAL • OFFLINE LAB</span>
+              </div>
+              <h3 class="rulebook-card-title"><i data-lucide="terminal" class="rule-title-icon"></i> 3. CODE COMBAT : OFFLINE CODING CHALLENGE</h3>
+            </div>
+
+            <p class="rulebook-intro-text">
+              Code Combat is an individual offline coding challenge inspired by platforms such as LeetCode and HackerRank. 
+              The competition is conducted in the college computer laboratory without Internet access and is designed to test 
+              participants' coding skills, logical thinking, algorithmic knowledge, and efficiency.
+            </p>
+
+            <div class="specs-pill-row">
+              <span class="spec-pill"><i data-lucide="user"></i> Participation: Strictly Individual</span>
+              <span class="spec-pill"><i data-lucide="monitor"></i> Venue: College Computer Lab Only</span>
+              <span class="spec-pill"><i data-lucide="wifi-off"></i> Internet: Strictly Prohibited</span>
+              <span class="spec-pill"><i data-lucide="code-2"></i> Languages: C, Java, Python</span>
+            </div>
+
+            <!-- Strict Anti-Cheating Alert -->
+            <div class="rulebook-alert-box alert-danger">
+              <div class="alert-icon-wrap"><i data-lucide="shield-x"></i></div>
+              <div class="alert-content">
+                <h5 class="alert-title">STRICT ANTI-CHEATING RULE</h5>
+                <p class="alert-desc">
+                  Any participant found copying, reproducing, sharing, or using another participant's code or solution in any form will be 
+                  <strong>IMMEDIATELY DISQUALIFIED WITHOUT WARNING</strong>. The participant will be removed from the competition, and 
+                  <strong>NO APPEAL OR RECONSIDERATION</strong> will be permitted.
+                </p>
+              </div>
+            </div>
+
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="list-checks"></i> Rules & Regulations:</h4>
+              <ul class="rule-bullet-list">
+                <li>Participation is strictly individual.</li>
+                <li>Participants must use the computers provided in the college computer laboratory.</li>
+                <li><strong>Internet access is strictly prohibited</strong> throughout the event.</li>
+                <li>Mobile phones, smart devices, and other external electronic devices are <strong>not permitted</strong> during the competition.</li>
+                <li>Participants must solve all problems using their own coding and problem-solving skills.</li>
+                <li>Copying code or solutions from another participant is strictly prohibited.</li>
+                <li>Sharing code, solutions, answers, or approaches with other participants is prohibited.</li>
+                <li>Pre-written programs or solutions prepared before the event cannot be submitted.</li>
+                <li>Participants cannot access online coding platforms, search engines, websites, or online references during the event.</li>
+                <li>Any attempt to bypass the no-internet restriction will result in immediate disqualification.</li>
+                <li>The decision of the judges and organizing committee will be final and binding.</li>
+              </ul>
+            </div>
+
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="cpu"></i> Programming Languages Allowed:</h4>
+              <div class="lang-selection-row">
+                <div class="lang-card"><span class="lang-number">1</span><span class="lang-name">C</span></div>
+                <div class="lang-card"><span class="lang-number">2</span><span class="lang-name">Java</span></div>
+                <div class="lang-card"><span class="lang-number">3</span><span class="lang-name">Python</span></div>
+              </div>
+              <p class="rule-note"><em>Participants may choose the programming language they are most comfortable with. Submitted solutions are evaluated with sample and hidden test cases.</em></p>
+            </div>
+          </div>
+
+          <!-- ==================== 5. FREE FIRE ==================== -->
+          <div class="rulebook-card" data-rule-category="free-fire">
+            <div class="rulebook-card-header">
+              <div class="rule-badge-group">
+                <span class="rule-cat-badge nontech-badge">NON-TECHNICAL EVENT 01</span>
+                <span class="rule-sub-badge">4 PLAYERS / SQUAD • 25 MINS</span>
+              </div>
+              <h3 class="rulebook-card-title"><i data-lucide="crosshair" class="rule-title-icon"></i> 1. FREE FIRE : ESPORTS TOURNAMENT</h3>
+            </div>
+
+            <div class="specs-pill-row">
+              <span class="spec-pill"><i data-lucide="users"></i> Squad: 4 Registered Players</span>
+              <span class="spec-pill"><i data-lucide="clock"></i> Duration: 25 Mins per Match</span>
+              <span class="spec-pill"><i data-lucide="swords"></i> Mode: Face to Face LAN Only</span>
+            </div>
+
+            <!-- 9 Combat Rules Grid -->
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="flame"></i> 9 General Combat Rules:</h4>
+              <div class="rules-numbered-grid">
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">1</span>
+                  <div class="rule-num-text"><strong>Character Skills</strong> — The use of character skills is strictly prohibited.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">2</span>
+                  <div class="rule-num-text"><strong>Gun Skins</strong> — Gun skins are not permitted in matches.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">3</span>
+                  <div class="rule-num-text"><strong>Emotes</strong> — The use of emotes is restricted during gameplay.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">4</span>
+                  <div class="rule-num-text"><strong>Pets</strong> — Pets are not allowed in the tournament.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">5</span>
+                  <div class="rule-num-text"><strong>Explosives</strong> — The use of explosives (grenades, mines, etc.) is strictly prohibited.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">6</span>
+                  <div class="rule-num-text"><strong>Rooftop</strong> — Players are restricted from climbing or taking position on rooftops.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">7</span>
+                  <div class="rule-num-text"><strong>X-Guns</strong> — The use of X-Guns is not allowed.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">8</span>
+                  <div class="rule-num-text"><strong>Re-entry</strong> — Re-entry into a match is not allowed under any circumstances.</div>
+                </div>
+                <div class="rule-num-card">
+                  <span class="rule-num-badge">9</span>
+                  <div class="rule-num-text"><strong>Face to Face Only</strong> — Physical on-site LAN participation only.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Disqualification, Fair Play & Squad Rules -->
+            <div class="rules-multi-columns">
+              <div class="rule-col-card">
+                <h5 class="col-card-title"><i data-lucide="slash"></i> Disqualification & Penalties</h5>
+                <ul class="rule-bullet-list">
+                  <li>Any form of cheating, rule breaking, or violation of tournament guidelines will result in immediate disqualification.</li>
+                  <li>Use of unauthorized applications, hacks, or modifications to the game will lead to permanent removal from the tournament.</li>
+                  <li>Organizers reserve the right to deduct points, issue warnings, or ban players/teams for misconduct.</li>
+                </ul>
+              </div>
+
+              <div class="rule-col-card">
+                <h5 class="col-card-title"><i data-lucide="heart-handshake"></i> Fair Play & Conduct</h5>
+                <ul class="rule-bullet-list">
+                  <li>Cheating, exploiting bugs, or using third-party tools to gain unfair advantage is strictly prohibited.</li>
+                  <li>All players must maintain good sportsmanship. Toxic behavior, harassment, or abusive language will not be tolerated.</li>
+                  <li>Respect towards opponents, teammates, and organizers is mandatory at all times.</li>
+                </ul>
+              </div>
+
+              <div class="rule-col-card">
+                <h5 class="col-card-title"><i data-lucide="shield-check"></i> Team / Squad Rules</h5>
+                <ul class="rule-bullet-list">
+                  <li>Each team must consist of exactly 4 registered players.</li>
+                  <li>No unregistered substitutes or account sharing is allowed.</li>
+                  <li>Teams must compete with the same roster throughout the tournament unless organizers approve a substitution.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== 6. SKETCH HUNT ==================== -->
+          <div class="rulebook-card" data-rule-category="sketch-hunt">
+            <div class="rulebook-card-header">
+              <div class="rule-badge-group">
+                <span class="rule-cat-badge nontech-badge">NON-TECHNICAL EVENT 02</span>
+                <span class="rule-sub-badge">CREATIVE PICTIONARY</span>
+              </div>
+              <h3 class="rulebook-card-title"><i data-lucide="palette" class="rule-title-icon"></i> 2. SKETCH HUNT : VISUAL COMMUNICATION</h3>
+            </div>
+
+            <!-- Flow sequence -->
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="git-branch"></i> How The Game Works:</h4>
+              <div class="flow-steps-grid">
+                <div class="flow-step-box">
+                  <span class="step-idx">STEP 1</span>
+                  <p>Teams register before the event begins.</p>
+                </div>
+                <div class="flow-step-box">
+                  <span class="step-idx">STEP 2</span>
+                  <p>One participant from the team receives a secret clue from the event coordinator.</p>
+                </div>
+                <div class="flow-step-box">
+                  <span class="step-idx">STEP 3</span>
+                  <p>The participant communicates the clue exclusively through drawings.</p>
+                </div>
+                <div class="flow-step-box">
+                  <span class="step-idx">STEP 4</span>
+                  <p>Remaining team members guess within the time limit. Correct answers earn points.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 14 Rules -->
+            <div class="rulebook-subblock">
+              <h4 class="subblock-heading"><i data-lucide="alert-circle"></i> 14 General Rules:</h4>
+              <div class="sketch-rules-grid">
+                <div class="sketch-rule-item"><strong>1. No Words</strong> — Must not write words, letters, numbers, initials, abbreviations, or spelling clues.</div>
+                <div class="sketch-rule-item"><strong>2. No Speaking</strong> — The sketcher must remain completely silent (no talking, sounds, or mouthing words).</div>
+                <div class="sketch-rule-item"><strong>3. No Actions</strong> — Acting, hand gestures, body movements, or sign language are strictly prohibited.</div>
+                <div class="sketch-rule-item"><strong>4. Drawing Only</strong> — The clue must be communicated strictly through the sketch.</div>
+                <div class="sketch-rule-item"><strong>5. No Direct Indication</strong> — Pointing at objects, people, posters, or screens is not allowed.</div>
+                <div class="sketch-rule-item"><strong>6. No Mobile Phones</strong> — Phones, internet searches, AI tools, or electronic devices cannot be used.</div>
+                <div class="sketch-rule-item"><strong>7. No Outside Help</strong> — Participants cannot receive clues or assistance from spectators or organizers.</div>
+                <div class="sketch-rule-item"><strong>8. No Copying</strong> — Must not copy another team's sketch or observe their clues.</div>
+                <div class="sketch-rule-item"><strong>9. No Clue Sharing</strong> — A participant must not reveal or show the secret clue to other teams.</div>
+                <div class="sketch-rule-item"><strong>10. Time Limit</strong> — Every clue must be guessed within the specified time limit.</div>
+                <div class="sketch-rule-item"><strong>11. Team Communication</strong> — Guessers may discuss among themselves; the drawer must remain silent.</div>
+                <div class="sketch-rule-item"><strong>12. No Disturbance</strong> — Teams must not intentionally distract or interfere with others.</div>
+                <div class="sketch-rule-item"><strong>13. Fair Play</strong> — Any attempt to cheat or bypass rules results in penalty or disqualification.</div>
+                <div class="sketch-rule-item"><strong>14. Organizer's Decision</strong> — Decision of coordinators and judges will be final in all disputes.</div>
+              </div>
+            </div>
+
+            <!-- Tie-Breaker & Important Note -->
+            <div class="rules-multi-columns">
+              <div class="rule-col-card">
+                <h5 class="col-card-title"><i data-lucide="scale"></i> Tie-Breaker Protocol</h5>
+                <p class="rule-text-muted">If two or more teams have the same final score:</p>
+                <ul class="rule-bullet-list">
+                  <li>A new secret clue will be provided.</li>
+                  <li>The same drawing-only rules will apply.</li>
+                  <li>The team that guesses correctly first will win the tie-breaker.</li>
+                  <li>Additional clues will be given if needed until a winner is determined.</li>
+                </ul>
+              </div>
+
+              <div class="rule-col-card">
+                <h5 class="col-card-title"><i data-lucide="alert-octagon"></i> Disqualification Criteria</h5>
+                <ul class="rule-bullet-list">
+                  <li>Writing the answer or spelling clues.</li>
+                  <li>Speaking, gesturing, or acting clues.</li>
+                  <li>Using phones, internet, or taking spectator help.</li>
+                  <li>Copying sketches or intentionally disturbing others.</li>
+                </ul>
+              </div>
+
+              <div class="rule-col-card highlight-col">
+                <h5 class="col-card-title"><i data-lucide="sparkles"></i> Core Philosophy</h5>
+                <p class="core-quote">
+                  “The event is based on pure visual communication through sketching. The person receiving the clue must communicate only through drawing.”
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. EVENT DAY AGENDA & KEYNOTE TIMELINE
+         ==================================================================== -->
+    <section id="agenda" class="agenda-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>KEYNOTE TIMELINE</span>
+          </div>
+          <h2 class="section-title">EVENT DAY AGENDA</h2>
+          <p class="section-subtitle">Official timetable for September 25, 2026 across all auditoriums & tech hubs.</p>
+        </div>
+
+        <div class="timeline-circuit-container">
+          <div class="timeline-circuit-line"></div>
+
+          <div class="timeline-nodes-grid">
+            <!-- Slot 1 -->
+            <div class="timeline-slot-card spotlight-card">
+              <div class="timeline-slot-dot"><span class="dot-inner"></span></div>
+              <div class="timeline-slot-content">
+                <div class="timeline-time-badge">
+                  <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                  <span>08:30 AM - 10:00 AM</span>
+                </div>
+                <h4 class="timeline-slot-title">Delegate Registration & Kit Collection</h4>
+                <p class="timeline-slot-desc">
+                  Check-in at the registration desks and collect your official delegate kit (file, pen, note, and handband).
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Auditorium Foyer</span>
+                  <span class="timeline-tag">Kit Distribution</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slot 2 -->
+            <div class="timeline-slot-card spotlight-card">
+              <div class="timeline-slot-dot"><span class="dot-inner"></span></div>
+              <div class="timeline-slot-content">
+                <div class="timeline-time-badge">
+                  <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                  <span>10:00 AM - 11:00 AM</span>
+                </div>
+                <h4 class="timeline-slot-title">Grand Inauguration Ceremony</h4>
+                <p class="timeline-slot-desc">
+                  Traditional lighting of the lamp, presidential address by college leadership, and inspirational keynote on emerging AI frontiers.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Main Auditorium</span>
+                  <span class="timeline-tag">Keynote Address</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slot 3 -->
+            <div class="timeline-slot-card spotlight-card highlight-slot">
+              <div class="timeline-slot-dot active-dot"><span class="dot-inner"></span></div>
+              <div class="timeline-slot-content">
+                <div class="timeline-time-badge cyan-badge">
+                  <i data-lucide="zap" style="width: 14px; height: 14px;"></i>
+                  <span>11:00 AM - 01:00 PM</span>
+                </div>
+                <h4 class="timeline-slot-title">Technical Championship Arena</h4>
+                <p class="timeline-slot-desc">
+                  Concurrent live competitions: PaperX presentations & evaluations, Prompt Battle 70-min multimodal AI sprint, and Code Combat offline lab challenge.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Seminar Hall</span>
+                  <span class="timeline-tag">AI Tech Hub</span>
+                  <span class="timeline-tag">Computer Lab</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slot 4 -->
+            <div class="timeline-slot-card spotlight-card">
+              <div class="timeline-slot-dot"><span class="dot-inner"></span></div>
+              <div class="timeline-slot-content">
+                <div class="timeline-time-badge">
+                  <i data-lucide="utensils" style="width: 14px; height: 14px;"></i>
+                  <span>01:00 PM - 02:00 PM</span>
+                </div>
+                <h4 class="timeline-slot-title">Networking Lunch & Tech Exhibition</h4>
+                <p class="timeline-slot-desc">
+                  Complimentary hot lunch for all registered delegates, campus tour, project exhibitions, and informal networking with faculty and peers.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Campus Dining Hall</span>
+                  <span class="timeline-tag">Networking</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slot 5 -->
+            <div class="timeline-slot-card spotlight-card highlight-slot-purple">
+              <div class="timeline-slot-dot purple-dot"><span class="dot-inner"></span></div>
+              <div class="timeline-slot-content">
+                <div class="timeline-time-badge purple-badge">
+                  <i data-lucide="gamepad-2" style="width: 14px; height: 14px;"></i>
+                  <span>02:00 PM - 04:00 PM</span>
+                </div>
+                <h4 class="timeline-slot-title">Non-Technical Arena & Esports</h4>
+                <p class="timeline-slot-desc">
+                  High-intensity Free Fire LAN Championship matches and Sketch Hunt creative drawing-elimination rounds under the 14 drawing-only rules.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Esports Arena</span>
+                  <span class="timeline-tag">Creative Hall</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slot 6 -->
+            <div class="timeline-slot-card spotlight-card">
+              <div class="timeline-slot-dot"><span class="dot-inner"></span></div>
+              <div class="timeline-slot-content">
+                <div class="timeline-time-badge green-badge">
+                  <i data-lucide="award" style="width: 14px; height: 14px;"></i>
+                  <span>04:15 PM - 05:00 PM</span>
+                </div>
+                <h4 class="timeline-slot-title">Valedictory & Prize Distribution</h4>
+                <p class="timeline-slot-desc">
+                  Podium ceremony, distribution of cash prizes, Overall Championship Trophy, Anna University hardcopy certificates, and official photos.
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">Main Auditorium</span>
+                  <span class="timeline-tag">Overall Trophy & Cash</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. PERKS, REWARDS & RECOGNITION
+         ==================================================================== -->
+    <section id="perks" class="perks-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>VALUE & REWARDS</span>
+          </div>
+          <h2 class="section-title">WHY PARTICIPATE IN INFINIXA '26?</h2>
+          <p class="section-subtitle">An unmatched inter-collegiate experience designed for ambitious creators, developers, and gamers.</p>
+        </div>
+
+        <div class="perks-grid">
+          
+          <div class="perk-card spotlight-card">
+            <div class="perk-icon-wrap" style="color: #ffd700; background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3);">
+              <i data-lucide="trophy"></i>
+            </div>
+            <h3 class="perk-title">Cash Prizes & Overall Trophy</h3>
+            <p class="perk-desc">
+              Dedicated cash prize pool and prestigious Overall Championship Trophy for the best-performing college across technical and non-technical tracks.
+            </p>
+            <span class="perk-highlight text-amber-400">Overall Trophy</span>
+          </div>
+
+          <div class="perk-card spotlight-card">
+            <div class="perk-icon-wrap" style="color: var(--cyan); background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.3);">
+              <i data-lucide="file-badge"></i>
+            </div>
+            <h3 class="perk-title">Anna University Certificates</h3>
+            <p class="perk-desc">
+              Official hardcopy participation and merit certificates signed by the Head of Department and College Principal for every attendee.
+            </p>
+            <span class="perk-highlight text-cyan-400">All Participants</span>
+          </div>
+
+          <div class="perk-card spotlight-card">
+            <div class="perk-icon-wrap" style="color: #00ff9d; background: rgba(0, 255, 157, 0.1); border-color: rgba(0, 255, 157, 0.3);">
+              <i data-lucide="utensils-crossed"></i>
+            </div>
+            <h3 class="perk-title">Food & Refreshments</h3>
+            <p class="perk-desc">
+              Completely covered under your ₹150 registration fee: delicious full lunch, evening tea, and snacks.
+            </p>
+            <span class="perk-highlight text-emerald-400">100% Complimentary</span>
+          </div>
+
+          <div class="perk-card spotlight-card">
+            <div class="perk-icon-wrap" style="color: #c084fc; background: rgba(192, 132, 252, 0.1); border-color: rgba(192, 132, 252, 0.3);">
+              <i data-lucide="package-check"></i>
+            </div>
+            <h3 class="perk-title">Souvenir Delegate Kit</h3>
+            <p class="perk-desc">
+              Official symposium delegate kit including conference file, branded pen, notepad, and delegate handband.
+            </p>
+            <span class="perk-highlight text-purple-400">File, Pen, Note & Handband</span>
+          </div>
+
+
+          <div class="perk-card spotlight-card">
+            <div class="perk-icon-wrap" style="color: #f43f5e; background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.3);">
+              <i data-lucide="network"></i>
+            </div>
+            <h3 class="perk-title">Statewide Networking</h3>
+            <p class="perk-desc">
+              Engage with over 500+ passionate engineers, programmers, AI builders, and esports squads representing colleges across Tamil Nadu.
+            </p>
+            <span class="perk-highlight text-rose-400">Inter-Collegiate</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. EVENT DETAILS & METRICS
+         ==================================================================== -->
+    <section id="details">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>EVENT METRICS</span>
+          </div>
+          <h2 class="section-title">EVENT DETAILS</h2>
+          <p class="section-subtitle">Everything you need to know before the battle commences.</p>
+        </div>
+
+        <!-- 5 Key Detail Metrics -->
+        <div class="details-grid">
+          
+          <div class="detail-card">
+            <div class="detail-icon-wrap">
+              <i data-lucide="calendar" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="detail-label">DATE</span>
+            <span class="detail-value" data-bind="eventDate">SEPTEMBER 25, 2026</span>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon-wrap">
+              <i data-lucide="map-pin" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="detail-label">VENUE</span>
+            <span class="detail-value" data-bind="venue">[COLLEGE VENUE]</span>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon-wrap">
+              <i data-lucide="clock" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="detail-label">TIME</span>
+            <span class="detail-value" data-bind="time">[EVENT TIME]</span>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon-wrap">
+              <i data-lucide="users" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="detail-label">TEAM SIZE</span>
+            <span class="detail-value" data-bind="teamSize">[TEAM SIZE]</span>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon-wrap">
+              <i data-lucide="ticket" style="width: 26px; height: 26px;"></i>
+            </div>
+            <span class="detail-label">REGISTRATION</span>
+            <span class="detail-value" data-bind="registrationFee">₹150 PER MEMBER</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. ABOUT THE SYMPOSIUM
+         ==================================================================== -->
+    <section id="about">
+      <div class="section-container">
+        
+        <div class="about-grid">
+          
+          <div class="about-content">
+            <div class="section-tag">
+              <span class="section-tag-pulse"></span>
+              <span>OUR VISION</span>
+            </div>
+            <h2 class="section-title" style="text-align: left; font-size: clamp(1.8rem, 4vw, 2.8rem);">
+              MORE THAN AN EVENT.<br>IT'S AN EXPERIENCE.
+            </h2>
+            <p class="about-description" data-bind="description">
+              “Where research innovation, generative AI, competitive coding, tactical esports, and lateral thinking converge into one high-tech championship.”
+            </p>
+          </div>
+
+          <!-- Futuristic Visual Showcase -->
+          <div class="glass-panel about-interactive-card">
+            <div class="globe-network-visual">
+              <i data-lucide="globe" style="width: 64px; height: 64px; color: var(--cyan);"></i>
+            </div>
+            <h3 class="font-display" style="font-size: 1.1rem; color: var(--text-highlight); margin-bottom: 8px;">
+              INTER-COLLEGIATE NETWORK
+            </h3>
+            <p style="font-family: var(--font-heading); font-size: 0.88rem; color: var(--text-muted); max-width: 280px;">
+              Connecting the brightest minds across engineering institutions nationwide.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         10. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION)
+         ==================================================================== -->
+    <section id="faq" class="faq-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>COMMONLY ASKED</span>
+          </div>
+          <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+          <p class="section-subtitle">Everything you need to know about registration, eligibility, scheduling, and logistics.</p>
+        </div>
+
+        <div class="faq-accordion-container">
+          
+          <div class="faq-item spotlight-card">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Who is eligible to participate in Infinixa 2026?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                Infinixa 2026 is open to all currently enrolled undergraduate and postgraduate students (B.E., B.Tech, M.E., M.Tech, B.Sc, BCA, MCA) from any recognized college or university. All engineering & technology departments and year cohorts are welcome! Remember to bring your valid college ID card for verification.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item spotlight-card">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Can I participate in multiple events across technical and non-technical tracks?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                Yes! The symposium timetable is specifically engineered to allow multi-event participation. Technical events (PaperX, Prompt Battle, Code Combat) run during the morning session (11:00 AM – 01:00 PM), while Non-Technical events (Free Fire, Sketch Hunt) take place during the afternoon session (02:00 PM – 04:00 PM).
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item spotlight-card">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">What is included in the ₹150 registration fee?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                The ₹150 fee per participant is a complete all-inclusive package covering: admission to competing arenas, official symposium delegate kit (file, pen, note, and handband), a full lunch, evening tea with snacks, and official hardcopy Anna University certificates.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item spotlight-card">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Is on-spot registration available on the day of the event?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                While a limited on-spot registration desk will be open from 08:30 AM to 10:00 AM at the main auditorium foyer, online pre-registration via our official Google Form is strongly recommended to guarantee your delegate kit and lunch coupons before auditorium capacity is reached.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item spotlight-card">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">How do we reach University College of Engineering, Ariyalur?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                The college is conveniently located along the Trichy–Chidambaram National Highway (NH 81) at Vilangudi, Ariyalur. Frequent government and private buses connect Ariyalur New Bus Stand, Perambalur, Jayankondam, and Trichy Central Bus Stand directly to the college entrance bus stop.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         11. VENUE & CAMPUS LOCATION (GOOGLE MAP)
+         ==================================================================== -->
+    <section id="location">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-pulse"></span>
+            <span>CAMPUS VENUE</span>
+          </div>
+          <h2 class="section-title">HOW TO REACH US</h2>
+          <p class="section-subtitle">University College of Engineering, Ariyalur (Anna University)</p>
+        </div>
+
+        <div class="location-grid">
+          
+          <!-- Location Info Card -->
+          <div class="glass-panel location-info-card">
+            <div class="location-info-header">
+              <div class="location-icon-badge">
+                <i data-lucide="map-pin" style="width: 24px; height: 24px; color: var(--cyan);"></i>
+              </div>
+              <div>
+                <h3 class="location-title">CAMPUS ADDRESS</h3>
+                <span class="location-subtitle">Kathankudikadu, Ariyalur</span>
+              </div>
+            </div>
+
+            <div class="location-details-list">
+              <div class="location-detail-item">
+                <i data-lucide="building-2" style="width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; margin-top: 2px;"></i>
+                <div>
+                  <strong>Institution:</strong>
+                  <p>University College of Engineering, Ariyalur</p>
+                  <span class="location-tag-sub">(A Constituent College of Anna University, Chennai)</span>
+                </div>
+              </div>
+
+              <div class="location-detail-item">
+                <i data-lucide="navigation" style="width: 20px; height: 20px; color: var(--purple); flex-shrink: 0; margin-top: 2px;"></i>
+                <div>
+                  <strong>Campus Location:</strong>
+                  <p>Kathankudikadu Village, Ariyalur – 621 704, Tamil Nadu, India</p>
+                </div>
+              </div>
+
+              <div class="location-detail-item">
+                <i data-lucide="train" style="width: 20px; height: 20px; color: var(--neon-green); flex-shrink: 0; margin-top: 2px;"></i>
+                <div>
+                  <strong>Transit Connectivity:</strong>
+                  <p>🚆 Ariyalur Railway Station (ALU)</p>
+                  <p>🚌 Ariyalur Central Bus Stand</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://maps.app.goo.gl/FkBU5m1mYQFjDo9PA" target="_blank" rel="noopener noreferrer" class="btn-directions" id="google-maps-directions-btn">
+              <i data-lucide="compass" style="width: 18px; height: 18px;"></i>
+              <span>GET DIRECTIONS ON GOOGLE MAPS</span>
+            </a>
+          </div>
+
+          <!-- Google Maps Interactive Embed -->
+          <div class="glass-panel map-container-card">
+            <div class="map-wrapper">
+              <iframe 
+                src="https://maps.google.com/maps?q=University%20College%20of%20Engineering%20Ariyalur&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps Location of University College of Engineering, Ariyalur">
+              </iframe>
+            </div>
+            <div class="map-status-bar">
+              <span class="map-status-dot"></span>
+              <span>LIVE GPS COORDINATES: 11.1399° N, 79.0665° E (ARIYALUR CAMPUS)</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. FINAL REGISTRATION EXPERIENCE (THE CLIMAX CTA)
+         ==================================================================== -->
+    <section id="register">
+      <div class="section-container">
+        
+        <div class="climax-portal-container">
+          <span class="climax-eyebrow">FINAL CALL FOR INNOVATORS</span>
+          <h2 class="climax-headline">READY TO ENTER THE BATTLE?</h2>
+          <p class="climax-subtitle">
+            “Choose your challenge. Bring your skills. Make your mark.”
+          </p>
+
+          <!-- THE PRIMARY MASTER REGISTER NOW BUTTON -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5ncHQMUFToFV1VNgVx5FKkOGaewIGDtQMgW8utG6obO-dGA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-climax-register" id="primary-register-btn">
+            <span>⚡ REGISTER NOW</span>
+          </a>
+
+          <p class="climax-notice">
+            Limited slots available. Instant verification and confirmation sent upon form submission.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. FOOTER
+         ==================================================================== -->
+    <footer class="cyber-footer">
+      <div class="section-container">
+        
+        <div class="footer-grid">
+          
+          <div class="footer-brand-col">
+            <div class="footer-brand-header">
+              <img src="assets/logo.png" alt="Anna University Logo" class="footer-brand-logo">
+              <div>
+                <h3 class="footer-brand-title">
+                  <span data-bind="collegeName">University College of Engineering, Ariyalur</span>
+                </h3>
+                <p class="footer-affiliation-text" data-bind="affiliation">(A Constituent College of Anna University, Chennai)</p>
+                <h4 class="footer-subbrand-title" data-bind="symposiumTitle">INFINIXA 2026</h4>
+              </div>
+            </div>
+            <p class="footer-tagline">
+              Technology • Creativity • Competition • Innovation
+            </p>
+            <p class="footer-desc">
+              National Level Grand Symposium celebrating the future of software, artificial intelligence, problem solving, and entertainment.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">QUICK LINKS</h4>
+            <ul class="footer-links-list">
+              <li class="footer-link-item"><a href="#hero">Home</a></li>
+              <li class="footer-link-item"><a href="#technical">Technical Events</a></li>
+              <li class="footer-link-item"><a href="#non-technical">Non-Technical Events</a></li>
+              <li class="footer-link-item"><a href="#details">Event Details</a></li>
+              <li class="footer-link-item"><a href="#about">About</a></li>
+              <li class="footer-link-item"><a href="#location">Location & Map</a></li>
+              <li class="footer-link-item"><a href="#register">Register</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-col-title">COORDINATORS</h4>
+            <div class="footer-contact-info">
+              <div>
+                <strong style="color: var(--cyan); display: block;">Email Inquiries:</strong>
+                <a href="mailto:infinixa2627@gmail.com" data-bind="email">infinixa2627@gmail.com</a>
+              </div>
+              <div style="margin-top: 12px;">
+                <strong style="color: var(--cyan); display: block;">Helpline Numbers:</strong>
+                <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px;">
+                  <a href="tel:+916382270376" style="color: var(--text-main); font-family: var(--font-heading); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--text-main)'">📞 +91 63822 70376</a>
+                  <a href="tel:+919080410182" style="color: var(--text-main); font-family: var(--font-heading); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--text-main)'">📞 +91 90804 10182</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 <span data-bind="collegeName">University College of Engineering, Ariyalur</span> • INFINIXA 2026. All Rights Reserved.</p>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Scroll to top" title="Back to top">
+    <i data-lucide="chevron-up" style="width: 22px; height: 22px;"></i>
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/config.js"></script>
+  <script src="js/audio-engine.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/scroll-controller.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
